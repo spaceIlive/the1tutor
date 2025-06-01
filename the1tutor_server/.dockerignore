@@ -1,0 +1,45 @@
+# Maven 빌드 결과물
+target/
+!target/*.jar
+
+# IDE 설정 파일
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# OS 생성 파일
+.DS_Store
+Thumbs.db
+
+# 로그 파일
+*.log
+logs/
+
+# 임시 파일
+*.tmp
+*.swp
+*.bak
+
+# Docker 관련
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Git
+.git/
+.gitignore
+
+# 환경설정 파일
+.env
+*.env
+
+# 개발용 데이터베이스
+*.db
+*.sqlite
+
+# Maven wrapper (선택사항 - 포함할지 결정)
+# .mvn/
+# mvnw
+# mvnw.cmd 
