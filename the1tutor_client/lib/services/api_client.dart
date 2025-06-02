@@ -3,16 +3,10 @@ import 'dart:convert' show utf8;
 import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 import '../models/auth_models.dart';
+import '../config/api_config.dart';
 
 class ApiClient {
-  static String get baseUrl {
-    if (kIsWeb) {
-      return 'http://localhost:8080/api';
-    } else {
-      // Android 에뮬레이터
-      return 'http://10.0.2.2:8080/api';
-    }
-  }
+  static String get baseUrl => ApiConfig.baseUrl;
 
   // ============ AUTH API ============
   
