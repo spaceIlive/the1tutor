@@ -19,16 +19,19 @@ jobs:
           channel: 'stable'
       
       - name: Get dependencies
+        working-directory: ./the1tutor_client
         run: flutter pub get
         
       - name: Enable web
+        working-directory: ./the1tutor_client
         run: flutter config --enable-web
         
       - name: Build web
+        working-directory: ./the1tutor_client
         run: flutter build web --base-href "/the1tutor_client/"
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/web 
+          publish_dir: ./the1tutor_client/build/web 
