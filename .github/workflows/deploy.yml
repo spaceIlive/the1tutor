@@ -28,10 +28,13 @@ jobs:
         
       - name: Build web
         working-directory: ./the1tutor_client
-        run: flutter build web --base-href "/the1tutor_client/"
+        run: flutter build web --base-href "/the1tutor/"
         
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./the1tutor_client/build/web 
+      - name: Copy web files
+        run: |
+          cp -r ./the1tutor_client/build/web/* .
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "Deploy web build"
+          git push origin main 
