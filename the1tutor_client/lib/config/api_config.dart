@@ -9,7 +9,7 @@ class ApiConfig {
     
     // 웹 환경에서는 항상 EC2 서버 주소 사용
     if (kIsWeb) {
-      return 'http://43.201.71.52:8080/api';
+      return 'http://13.209.48.194:8080/api';
     }
     
     // 모바일 개발 환경에서만 로컬 서버 주소 사용
@@ -18,6 +18,6 @@ class ApiConfig {
     }
     
     // 프로덕션 환경에서는 AWS 서버 주소 사용
-    return 'http://43.201.71.52:8080/api';
+    return 'http://13.209.48.194:8080/api';
   }
 } 
