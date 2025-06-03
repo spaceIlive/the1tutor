@@ -7,9 +7,9 @@ class ApiConfig {
       return const String.fromEnvironment('API_URL');
     }
     
-    // 웹 환경에서는 항상 EC2 서버 주소 사용
+    // 웹 환경에서는 항상 EC2 서버 HTTPS 주소 사용
     if (kIsWeb) {
-      return 'http://13.209.48.194:8080/api';
+      return 'https://13.209.48.194/api';
     }
     
     // 모바일 개발 환경에서만 로컬 서버 주소 사용
