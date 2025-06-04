@@ -31,7 +31,11 @@ public class SecurityConfig {
             "http://localhost:3000",
             "http://localhost:8080", 
             "https://spaceIlive.github.io",
-            "http://spaceIlive.github.io"
+            "http://spaceIlive.github.io",
+            "http://3.39.233.131:8080",
+            "https://3.39.233.131",
+            "http://ec2-3-39-233-131.ap-northeast-2.compute.amazonaws.com:8080",
+            "https://ec2-3-39-233-131.ap-northeast-2.compute.amazonaws.com"
         ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));

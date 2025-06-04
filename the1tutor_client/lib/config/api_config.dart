@@ -9,7 +9,9 @@ class ApiConfig {
     
     // 웹 환경에서는 항상 EC2 서버 HTTPS 주소 사용
     if (kIsWeb) {
-      return 'https://13.209.48.194/api';
+      // 임시 테스트: localhost 사용
+      return 'http://localhost:8080/api';
+      // return 'https://3.39.233.131/api';
     }
     
     // 모바일 개발 환경에서만 로컬 서버 주소 사용
@@ -18,6 +20,6 @@ class ApiConfig {
     }
     
     // 프로덕션 환경에서는 AWS 서버 주소 사용
-    return 'http://13.209.48.194:8080/api';
+    return 'http://3.39.233.131:8080/api';
   }
 } 
