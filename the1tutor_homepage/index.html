@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>The1Tutor - IB Tutoring Platform</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Topbar Start 
+        <div class="container-fluid topbar bg-light px-5 d-none d-lg-block">
+            <div class="row gx-0 align-items-center">
+                <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                    <div class="d-flex flex-wrap">
+                        <a href="#" class="text-muted small me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find A Location</a>
+                        <a href="tel:+01234567890" class="text-muted small me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+01234567890</a>
+                        <a href="mailto:example@gmail.com" class="text-muted small me-0"><i class="fas fa-envelope text-primary me-2"></i>Example@gmail.com</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <div class="d-inline-flex align-items-center" style="height: 45px;">
+                        <a href="#"><small class="me-3 text-dark"><i class="fa fa-user text-primary me-2"></i>Register</small></a>
+                        <a href="#"><small class="me-3 text-dark"><i class="fa fa-sign-in-alt text-primary me-2"></i>Login</small></a>
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-toggle text-dark" data-bs-toggle="dropdown"><small><i class="fa fa-home text-primary me-2"></i> My Dashboard</small></a>
+                            <div class="dropdown-menu rounded">
+                                <a href="#" class="dropdown-item"><i class="fas fa-user-alt me-2"></i> My Profile</a>
+                                <a href="#" class="dropdown-item"><i class="fas fa-comment-alt me-2"></i> Inbox</a>
+                                <a href="#" class="dropdown-item"><i class="fas fa-bell me-2"></i> Notifications</a>
+                                <a href="#" class="dropdown-item"><i class="fas fa-cog me-2"></i> Account Settings</a>
+                                <a href="#" class="dropdown-item"><i class="fas fa-power-off me-2"></i> Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        Topbar End -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="text-primary"><i class="fas fa-graduation-cap me-3"></i>The1Tutor</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="#home" class="nav-item nav-link active">Home</a>
+                        <a href="#about" class="nav-item nav-link">About</a>
+                        <a href="#services" class="nav-item nav-link">Services</a>
+                        <a href="#pricing" class="nav-item nav-link">Pricing</a>
+                        <a href="#faq" class="nav-item nav-link">FAQ</a>
+                        <a href="#tutor" class="nav-item nav-link">튜터 지원</a>
+                    </div>
+                    <a href="https://spaceilive.github.io/the1tutor/" class="btn btn-primary rounded-pill py-2 px-4 my-3 my-lg-0 flex-shrink-0">Get Started</a>
+                </div>
+            </nav>
+
+            <!-- Carousel Start -->
+            <div class="header-carousel owl-carousel" id="home">
+                <div class="header-carousel-item">
+                    <img src="img/carousel-1.jpg" class="img-fluid w-100" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row gy-0 gx-5">
+                                <div class="col-lg-0 col-xl-5"></div>
+                                <div class="col-xl-7 animated fadeInLeft">
+                                    <div class="text-sm-center text-md-end">
+                                        <h4 class="text-primary text-uppercase fw-bold mb-4">Welcome To The1Tutor</h4>
+                                        <h1 class="display-4 text-uppercase text-white mb-4">내가 꿈꾸던 바로 그 대학 출신 튜터를 만나보세요!</h1>
+                                        <p class="mb-5 fs-5">하버드·MIT·옥스포드·케임브리지 출신 IB 43+ 튜터와 함께하는 맞춤형 학습</p>
+                                        <div class="d-flex justify-content-center justify-content-md-end flex-shrink-0 mb-4">
+                                            <a class="btn btn-primary rounded-pill py-3 px-4 px-md-5" href="#" data-bs-toggle="modal" data-bs-target="#consultModal"><i class="fas fa-user-graduate me-2"></i>무료 상담 신청하기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-carousel-item">
+                    <img src="img/carousel-2.jpg" class="img-fluid w-100" alt="Image">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row g-5">
+                                <div class="col-12 animated fadeInUp">
+                                    <div class="text-center">
+                                        <h4 class="text-primary text-uppercase fw-bold mb-4">Welcome To The1Tutor</h4>
+                                        <h1 class="display-4 text-uppercase text-white mb-4">내가 꿈꾸던 바로 그 대학 출신 튜터를 만나보세요!</h1>
+                                        <p class="mb-5 fs-5">하버드·MIT·옥스포드·케임브리지 출신 IB 43+ 튜터와 함께하는 맞춤형 학습</p>
+                                        <div class="d-flex justify-content-center flex-shrink-0 mb-4">
+                                            <a class="btn btn-primary rounded-pill py-3 px-4 px-md-5" href="#" data-bs-toggle="modal" data-bs-target="#consultModal"><i class="fas fa-user-graduate me-2"></i>무료 상담 신청하기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel End -->
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+        <!-- About Start -->
+        <div class="container-fluid about py-5" id="about">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-xl-7 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div>
+                            <h4 class="text-primary">About Us</h4>
+                            <h1 class="display-5 mb-4">왜 The1Tutor인가요?</h1>
+                            <p class="mb-4">세계 최고 명문대 출신 튜터들이 직접 설계한 맞춤형 IB 커리큘럼으로, 여러분의 목표 대학 진학을 실현합니다.</p>
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                    <div class="d-flex">
+                                        <div><i class="fas fa-medal fa-3x text-primary"></i></div>
+                                        <div class="ms-4">
+                                            <h4>세계 명문대 출신 튜터진</h4>
+                                            <p>하버드, MIT, 옥스포드, 케임브리지 등 최고 명문대 출신 튜터들이 여러분의 학습을 이끌어갑니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                    <div class="d-flex">
+                                        <div><i class="fas fa-user-check fa-3x text-primary"></i></div>
+                                        <div class="ms-4">
+                                            <h4>과목별 맞춤 매칭</h4>
+                                            <p>목표 대학별 전문 튜터를 배정하여 최적의 학습 경험을 제공합니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                    <div class="d-flex">
+                                        <div><i class="fas fa-shield-alt fa-3x text-primary"></i></div>
+                                        <div class="ms-4">
+                                            <h4>첫 수업 후 불만족시 전액 환불</h4>
+                                            <p>부담 없이 시작할 수 있는 확실한 보장 시스템을 제공합니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6 col-xl-6">
+                                    <div class="d-flex">
+                                        <div><i class="fas fa-sync-alt fa-3x text-primary"></i></div>
+                                        <div class="ms-4">
+                                            <h4>튜터 변경 무료</h4>
+                                            <p>원하는 튜터가 나올 때까지 변경 비용 없이 재매칭해드립니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 wow fadeInRight" data-wow-delay="0.2s">
+                        <div class="bg-primary rounded position-relative overflow-hidden">
+                            <img src="img/about-1.jpg" class="img-fluid rounded w-100" alt="">
+                            <div class="d-flex align-items-center justify-content-center bg-primary rounded-circle position-absolute" style="width: 150px; height: 150px; top: -30px; right: -30px;">
+                                <h1 class="display-4 text-white mb-0">43+</h1>
+                            </div>
+                            <div class="p-4 text-white">
+                                <h4 class="text-white mb-3">IB 최상위 1% 튜터진</h4>
+                                <p class="mb-0">모든 튜터는 IB 43점 이상을 취득한 검증된 인재입니다. 실력과 열정을 겸비한 최고의 튜터들과 함께하세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+        <!-- Services Start -->
+        <div class="container-fluid service pb-5" id="services">
+            <div class="container pb-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Our Services</h4>
+                    <h1 class="display-5 mb-4">The1Tutor가 제공하는 학습 경험</h1>
+                    <p class="mb-0">IB 과목별 전문 튜터와 함께하는 맞춤형 학습 경험을 제공합니다.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <img src="img/service-1.jpg" class="img-fluid rounded-top w-100" alt="Image">
+                            </div>
+                            <div class="rounded-bottom p-4">
+                                <a href="#" class="h4 d-inline-block mb-4">신뢰 기반 튜터 검증</a>
+                                <p class="mb-4">IB 43+ 점수, 직접 검증 절차로 등록된 검증된 튜터진과 함께하세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <img src="img/service-2.jpg" class="img-fluid rounded-top w-100" alt="Image">
+                            </div>
+                            <div class="rounded-bottom p-4">
+                                <a href="#" class="h4 d-inline-block mb-4">진학 목표 기반 매칭</a>
+                                <p class="mb-4">대학/전공/학습목표에 기반한 최적의 튜터를 추천해드립니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <img src="img/service-3.jpg" class="img-fluid rounded-top w-100" alt="Image">
+                            </div>
+                            <div class="rounded-bottom p-4">
+                                <a href="#" class="h4 d-inline-block mb-4">학습 성향 분석</a>
+                                <p class="mb-4">성향 분석 결과를 반영한 맞춤형 튜터를 제안해드립니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <img src="img/service-4.jpg" class="img-fluid rounded-top w-100" alt="Image">
+                            </div>
+                            <div class="rounded-bottom p-4">
+                                <a href="#" class="h4 d-inline-block mb-4">수업 만족도 피드백</a>
+                                <p class="mb-4">학생 피드백을 기반으로 튜터 평가와 매칭을 지속적으로 개선합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <img src="img/service-5.jpg" class="img-fluid rounded-top w-100" alt="Image">
+                            </div>
+                            <div class="rounded-bottom p-4">
+                                <a href="#" class="h4 d-inline-block mb-4">유연한 시간표 매칭</a>
+                                <p class="mb-4">학생과 튜터의 스케줄을 자동으로 정렬하여 최적의 수업 시간을 찾아드립니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <img src="img/service-6.jpg" class="img-fluid rounded-top w-100" alt="Image">
+                            </div>
+                            <div class="rounded-bottom p-4">
+                                <a href="#" class="h4 d-inline-block mb-4">전 과목 지원</a>
+                                <p class="mb-4">그룹 1~6, HL/SL, TOK/EE를 포함한 모든 IB 과목을 지원합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Services End -->
+
+        <!-- Offer Start -->
+        <div class="container-fluid offer-section pb-5">
+            <div class="container pb-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Our Offer</h4>
+                    <h1 class="display-5 mb-4">The1Tutor만의 특별한 경험</h1>
+                    <p class="mb-0">IB 학습에 최적화된 프리미엄 과외 매칭 서비스를 경험해보세요.</p>
+                </div>
+                <div class="row g-5 align-items-center">
+                    <div class="col-xl-5 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="nav nav-pills bg-light rounded p-5">
+                            <a class="accordion-link p-4 active mb-4" data-bs-toggle="pill" onclick="event.preventDefault()" data-bs-target="#collapseOne">
+                                <h5 class="mb-0">최상위 1% IB 튜터와 함께하는 맞춤형 학습</h5>
+                            </a>
+                            <a class="accordion-link p-4 mb-4" data-bs-toggle="pill" onclick="event.preventDefault()" data-bs-target="#collapseTwo">
+                                <h5 class="mb-0">AI 기반 매칭 시스템으로 빠른 튜터 매칭</h5>
+                            </a>
+                            <a class="accordion-link p-4 mb-4" data-bs-toggle="pill" onclick="event.preventDefault()" data-bs-target="#collapseThree">
+                                <h5 class="mb-0">검증된 43+ 고득점 튜터진의 체계적 학습 관리</h5>
+                            </a>
+                            <a class="accordion-link p-4 mb-4" data-bs-toggle="pill" onclick="event.preventDefault()" data-bs-target="#collapseFour">
+                                <h5 class="mb-0">언제 어디서나 편리한 앱 기반 학습 관리</h5>
+                            </a>
+                            <a class="accordion-link p-4 mb-0" data-bs-toggle="pill" onclick="event.preventDefault()" data-bs-target="#collapseFive">
+                                <h5 class="mb-0">전액 환불 보장 시스템</h5>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 wow fadeInRight" data-wow-delay="0.4s">
+                        <div class="tab-content">
+                            <div id="collapseOne" class="tab-pane fade show active">
+                                <div class="text-center p-5">
+                                    <h1 class="display-5 mb-4">목표 대학 진학을 실현하세요</h1>
+                                    <p class="mb-4 fs-5">최상위 1% IB 튜터와 함께하는 맞춤형 학습으로 목표 대학 진학의 꿈을 이루세요.</p>
+                                </div>
+                            </div>
+                            <div id="collapseTwo" class="tab-pane fade">
+                                <div class="text-center p-5">
+                                    <h1 class="display-5 mb-4">AI 기반 매칭 시스템</h1>
+                                    <p class="mb-4 fs-5">AI 기반 매칭 시스템으로 나에게 딱 맞는 튜터를 빠르게 찾을 수 있습니다.</p>
+                                </div>
+                            </div>
+                            <div id="collapseThree" class="tab-pane fade">
+                                <div class="text-center p-5">
+                                    <h1 class="display-5 mb-4">검증된 튜터진</h1>
+                                    <p class="mb-4 fs-5">검증된 43+ 고득점 튜터진과 체계적인 학습 관리로 안정적인 성적 향상을 경험하세요.</p>
+                                </div>
+                            </div>
+                            <div id="collapseFour" class="tab-pane fade">
+                                <div class="text-center p-5">
+                                    <h1 class="display-5 mb-4">편리한 앱 관리</h1>
+                                    <p class="mb-4 fs-5">언제 어디서나 앱으로 수업 일정을 관리하고 학습 자료를 확인할 수 있습니다.</p>
+                                </div>
+                            </div>
+                            <div id="collapseFive" class="tab-pane fade">
+                                <div class="text-center p-5">
+                                    <h1 class="display-5 mb-4">안심 첫 수업</h1>
+                                    <p class="mb-4 fs-5">The1Tutor에서는 체험 수업 대신 첫 수업 후 불만족 시 어떠한 위약조건이나 불이익 없이 자유로운 해지가 가능한 전액 환불 제도를 자신있게 운영하고 있습니다. 부담없이 편안한 첫 수업 후 이용해보세요.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Offer End -->
+
+        <!-- Pricing Start -->
+        <div class="container-fluid pricing py-5" id="pricing">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Pricing</h4>
+                    <h1 class="display-5 mb-4">가격안내</h1>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="pricing-item bg-light rounded h-100 p-5">
+                            <div class="text-center">
+                                <h3 class="text-primary mb-4">주 1회 과외</h3>
+                                <div class="d-flex align-items-center justify-content-center mb-4">
+                                    <h1 class="display-4 text-primary mb-0">525,000</h1>
+                                    <h6 class="text-muted ms-2">원/월</h6>
+                                </div>
+                                <ul class="list-unstyled text-start">
+                                    <li class="mb-3"><i class="fas fa-check text-primary me-3"></i>세계 최고 명문대 출신 튜터</li>
+                                    <li class="mb-3"><i class="fas fa-check text-primary me-3"></i>맞춤형 수업 계획</li>
+                                    <li class="mb-3"><i class="fas fa-check text-primary me-3"></i>월 4회 수업 (주 1회)</li>
+                                    <li class="mb-3"><i class="fas fa-check text-primary me-3"></i>개별 피드백 제공</li>
+                                    <li class="mb-3"><i class="fas fa-check text-primary me-3"></i>첫 수업 후 불만족시 전액 환불</li>
+                                    <li class="mb-3"><i class="fas fa-check text-primary me-3"></i>튜터 변경 무료</li>
+                                </ul>
+                                <a href="#" class="btn btn-primary rounded-pill py-3 px-5 mt-4">지금 시작하기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="pricing-item bg-primary text-white rounded h-100 p-5">
+                            <div class="text-center">
+                                <h3 class="mb-4">주 2회 과외</h3>
+                                <div class="d-flex align-items-center justify-content-center mb-4">
+                                    <h1 class="display-4 mb-0">892,000</h1>
+                                    <h6 class="ms-2">원/월</h6>
+                                </div>
+                                <ul class="list-unstyled text-start">
+                                    <li class="mb-3"><i class="fas fa-check me-3"></i>세계 최고 명문대 출신 튜터</li>
+                                    <li class="mb-3"><i class="fas fa-check me-3"></i>맞춤형 수업 계획</li>
+                                    <li class="mb-3"><i class="fas fa-check me-3"></i>월 8회 수업 (주 2회)</li>
+                                    <li class="mb-3"><i class="fas fa-check me-3"></i>개별 피드백 제공</li>
+                                    <li class="mb-3"><i class="fas fa-check me-3"></i>첫 수업 후 불만족시 전액 환불</li>
+                                    <li class="mb-3"><i class="fas fa-check me-3"></i>튜터 변경 무료</li>
+                                    <li class="mb-3"><i class="fas fa-star me-3"></i>집중 관리 (권장)</li>
+                                </ul>
+                                <a href="#" class="btn btn-light rounded-pill py-3 px-5 mt-4">지금 시작하기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pricing End -->
+
+        <!-- Blog Start -->
+        <!-- <div class="container-fluid blog pb-5">
+            <div class="container pb-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Our Blog & News</h4>
+                    <h1 class="display-5 mb-4">Articles For Pro Traders</h1>
+                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
+                    </p>
+                </div>
+                <div class="owl-carousel blog-carousel wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="blog-item p-4">
+                        <div class="blog-img mb-4">
+                            <img src="img/service-1.jpg" class="img-fluid w-100 rounded" alt="">
+                            <div class="blog-title">
+                                <a href="#" class="btn">Dividend Stocks</a>
+                            </div>
+                        </div>
+                        <a href="#" class="h4 d-inline-block mb-3">Options Trading Business?</a>
+                        <p class="mb-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore aut aliquam suscipit error corporis accusamus labore....
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <img src="img/testimonial-1.jpg" class="img-fluid rounded-circle" style="width: 60px; height: 60px;" alt="">
+                            <div class="ms-3">
+                                <h5>Admin</h5>
+                                <p class="mb-0">October 9, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Blog End -->
+
+
+        <!-- FAQs Start -->
+        <div class="container-fluid faq-section pb-5" id="faq">
+            <div class="container pb-5 overflow-hidden">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">FAQs</h4>
+                    <h1 class="display-5 mb-4">자주 묻는 질문</h1>
+                    <p class="mb-0">The1Tutor에 대해 자주 묻는 질문들을 모았습니다.</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="accordion accordion-flush bg-light rounded p-5" id="accordionFlushSection">
+                            <div class="accordion-item rounded-top">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    IB 튜터는 어떻게 선정되나요?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushSection">
+                                    <div class="accordion-body">The1Tutor는 43점 이상 고득점자만을 선발하며, 면접, 시범강의 등 검증을 거칩니다. 진학 희망대학, 학습 스타일, 선호하는 수업 방식 등을 반영한 알고리즘 기반 매칭을 제공합니다.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                    IB 튜터는 어떤 과목을 지원하나요?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushSection">
+                                    <div class="accordion-body">모든 IB 과목(그룹 1~6), HL/SL, TOK, EE 등도 포함하여 지원됩니다.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                    수업은 어떤 방식으로 진행되나요?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushSection">
+                                    <div class="accordion-body">모든 수업은 비대면으로 진행됩니다. 화상 회의 플랫폼을 통해 실시간 상호작용이 가능하며, 수업 자료는 앱을 통해 실시간으로 공유됩니다.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                    정말 하버드, MIT 등 세계 명문대 출신 튜터가 수업하나요?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushSection">
+                                    <div class="accordion-body">네, 맞습니다. The1Tutor는 하버드, MIT, 옥스포드, 케임브리지 등 세계 최고 명문대 졸업생 중 IB 고득점자만을 엄격하게 선별합니다. 모든 튜터는 학위 인증과 성적 증명을 통해 검증되며, 교육 전문성과 의사소통 능력을 종합 평가하여 선발됩니다.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                    수업 시간은 어떻게 정해지나요?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushSection">
+                                    <div class="accordion-body">앱 내의 시간표 UI를 통해 학생과 선생님이 각자 가능한 수업 시간대를 마커로 표시해두면 자동으로 최적의 수업 시간이 스케줄링됩니다. 이를 통해 양측 모두에게 편리한 시간을 찾을 수 있습니다.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item rounded-bottom">
+                                <h2 class="accordion-header" id="flush-headingSix">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                                    중도 튜터 변경이 가능한가요?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushSection">
+                                    <div class="accordion-body">네, 가능합니다. 매칭된 선생님이 마음에 들지 않으시면 새로운 선생님으로 계속해서 변경이 가능합니다. 학생의 만족도를 최우선으로 생각하여, 마음에 드는 선생님을 찾을 때까지 무료로 재매칭해드립니다.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FAQs End -->
+
+
+        <!-- Team Start -->
+        <div class="container-fluid team pb-5" id="tutor">
+            <div class="container pb-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Join Us</h4>
+                    <h1 class="display-5 mb-4">The1Tutor의 튜터가 되어보세요</h1>
+                    <p class="mb-0">The1Tutor는 IB 교육 경험과 실력을 갖춘 튜터를 모집하고 있습니다. 공정한 보상, 유연한 수업 시간, 학생 중심의 플랫폼을 경험하세요.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="https://spaceilive.github.io/the1tutor/#/tutor-login" class="btn btn-primary rounded-pill py-3 px-5">지금 지원하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Team End -->
+
+        <!-- Testimonial Start -->
+        <!-- Testimonial End -->
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container py-5 border-start-0 border-end-0" style="border: 1px solid; border-color: rgb(255, 255, 255, 0.08);">
+                <div class="row g-5 justify-content-center">
+                    <div class="col-md-6 col-lg-6 col-xl-4">
+                        <div class="footer-item">
+                            <a href="index.html" class="p-0">
+                                <h4 class="text-white"><i class="fas fa-graduation-cap me-3"></i>The1Tutor</h4>
+                            </a>
+                            <p class="mb-4">최고의 IB 튜터들과 함께하는 프리미엄 과외 매칭 플랫폼</p>
+                            <div class="d-flex">
+                                <a href="#" class="bg-primary d-flex rounded align-items-center py-2 px-3 me-2">
+                                    <i class="fas fa-apple-alt text-white"></i>
+                                    <div class="ms-3">
+                                        <small class="text-white">Coming Soon on</small>
+                                        <h6 class="text-white">App Store</h6>
+                                    </div>
+                                </a>
+                                <a href="#" class="bg-dark d-flex rounded align-items-center py-2 px-3 ms-2">
+                                    <i class="fas fa-play text-primary"></i>
+                                    <div class="ms-3">
+                                        <small class="text-white">Coming Soon on</small>
+                                        <h6 class="text-white">Google Play</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-4">
+                        <div class="footer-item">
+                            <h4 class="text-white mb-4">Contact Info</h4>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-envelope text-primary me-3"></i>
+                                <p class="text-white mb-0">gyun6266@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>All right reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-body">
+                        <!--/*** This template is free as long as you keep the below author's credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author's credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Designed By YG
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+        <!-- Consultation Modal -->
+        <div class="modal fade" id="consultModal" tabindex="-1" aria-labelledby="consultModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" style="max-width: 500px;">
+                <div class="modal-content" style="border: none; border-radius: 20px;">
+                    <div class="modal-header" style="border-bottom: none; padding: 32px 32px 0;">
+                        <div class="w-100 text-center">
+                            <h4 class="modal-title fw-bold" id="consultModalLabel" style="color: #2E3647; margin-bottom: 12px;">
+                                <span style="background: linear-gradient(120deg, #a855f7 0%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">전문 컨설턴트</span> 상담 신청
+                            </h4>
+                            <p style="color: #596378; font-size: 14px; margin: 0;">
+                                학생에게 가장 잘 맞는 튜터를 연결해 드릴 수 있도록<br>
+                                전화 상담 분석에 필요한 정보를 입력해 주세요.
+                            </p>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position: absolute; top: 20px; right: 20px;"></button>
+                    </div>
+                    <div class="modal-body" style="padding: 24px 32px 32px;">
+                        <form id="consultForm">
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold" style="color: #596378; font-size: 14px;">희망 상담 시간</label>
+                                <p style="color: #5C55F7; font-size: 12px; margin-bottom: 8px;">* 신청 후 1영업일 내에 상담이 진행됩니다.</p>
+                                <select class="form-select" style="border: 1px solid #DCE0E9; border-radius: 8px; padding: 12px 16px; background-color: #FFFFFF;">
+                                    <option value="">상담시간 선택</option>
+                                    <option value="10:00 ~ 11:00">10:00 ~ 11:00</option>
+                                    <option value="11:00 ~ 12:00">11:00 ~ 12:00</option>
+                                    <option value="12:00 ~ 13:00">12:00 ~ 13:00</option>
+                                    <option value="14:00 ~ 15:00">14:00 ~ 15:00</option>
+                                    <option value="15:00 ~ 16:00">15:00 ~ 16:00</option>
+                                    <option value="16:00 ~ 17:00">16:00 ~ 17:00</option>
+                                    <option value="17:00 ~ 18:00">17:00 ~ 18:00</option>
+                                    <option value="18:00 ~ 19:00">18:00 ~ 19:00</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold" style="color: #596378; font-size: 14px;">학생 학년</label>
+                                <select class="form-select" style="border: 1px solid #DCE0E9; border-radius: 8px; padding: 12px 16px; background-color: #FFFFFF;">
+                                    <option value="">2025년도 3월 기준 학년</option>
+                                    <option value="Year 10">Year 10</option>
+                                    <option value="Year 11">Year 11</option>
+                                    <option value="Year 12">Year 12</option>
+                                    <option value="Year 13">Year 13</option>
+                                    <option value="기타">기타</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold" style="color: #596378; font-size: 14px;">희망 과목</label>
+                                <select class="form-select" style="border: 1px solid #DCE0E9; border-radius: 8px; padding: 12px 16px; background-color: #FFFFFF;">
+                                    <option value="">희망 과목 선택</option>
+                                    <option value="Mathematics HL">Mathematics HL</option>
+                                    <option value="Mathematics SL">Mathematics SL</option>
+                                    <option value="Physics HL">Physics HL</option>
+                                    <option value="Physics SL">Physics SL</option>
+                                    <option value="Chemistry HL">Chemistry HL</option>
+                                    <option value="Chemistry SL">Chemistry SL</option>
+                                    <option value="Biology HL">Biology HL</option>
+                                    <option value="Biology SL">Biology SL</option>
+                                    <option value="English A HL">English A HL</option>
+                                    <option value="English A SL">English A SL</option>
+                                    <option value="Economics HL">Economics HL</option>
+                                    <option value="Economics SL">Economics SL</option>
+                                    <option value="TOK">TOK</option>
+                                    <option value="Extended Essay">Extended Essay</option>
+                                    <option value="기타">기타</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold" style="color: #596378; font-size: 14px;">학부모님 성함</label>
+                                <input type="text" class="form-control" placeholder="김더원" style="border: 1px solid #DCE0E9; border-radius: 8px; padding: 12px 16px; background-color: #FFFFFF;">
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold" style="color: #596378; font-size: 14px;">학부모님 연락처</label>
+                                <input type="text" id="phoneNumber" class="form-control" placeholder="010-1234-5678" maxlength="13" style="border: 1px solid #DCE0E9; border-radius: 8px; padding: 12px 16px; background-color: #FFFFFF;">
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="totalPolicy" style="accent-color: #5C55F7;">
+                                    <label class="form-check-label" for="totalPolicy" style="color: #596378; font-size: 14px;">
+                                        약관 전체 동의
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="personalPolicy" style="accent-color: #5C55F7;">
+                                    <label class="form-check-label" for="personalPolicy" style="color: #596378; font-size: 14px;">
+                                        [필수] 상담을 위한 개인정보 수집 및 이용 약관 동의
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn w-100" style="background-color: #5C55F7; color: white; border-radius: 8px; padding: 12px; font-weight: 700; border: none; height: 52px;">
+                                상담 신청하기
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Consultation Modal JavaScript -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // 전화번호 자동 포맷팅 기능
+                const phoneInput = document.getElementById('phoneNumber');
+                
+                phoneInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/[^\d]/g, ''); // 숫자만 추출
+                    let formattedValue = '';
+                    
+                    if (value.length <= 3) {
+                        formattedValue = value;
+                    } else if (value.length <= 7) {
+                        formattedValue = value.slice(0, 3) + '-' + value.slice(3);
+                    } else {
+                        formattedValue = value.slice(0, 3) + '-' + value.slice(3, 7) + '-' + value.slice(7, 11);
+                    }
+                    
+                    e.target.value = formattedValue;
+                });
+
+                // 숫자와 하이픈만 입력 허용
+                phoneInput.addEventListener('keypress', function(e) {
+                    const char = String.fromCharCode(e.which);
+                    if (!/[\d-]/.test(char)) {
+                        e.preventDefault();
+                    }
+                });
+
+                // 약관 전체 동의 기능
+                document.getElementById('totalPolicy').addEventListener('change', function() {
+                    const personalPolicy = document.getElementById('personalPolicy');
+                    
+                    if (this.checked) {
+                        personalPolicy.checked = true;
+                    } else {
+                        personalPolicy.checked = false;
+                    }
+                });
+
+                // 개별 체크박스 변경 시 전체 동의 상태 업데이트
+                document.getElementById('personalPolicy').addEventListener('change', function() {
+                    const totalPolicy = document.getElementById('totalPolicy');
+                    totalPolicy.checked = this.checked;
+                });
+
+                // 폼 제출 처리
+                document.getElementById('consultForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const personalPolicy = document.getElementById('personalPolicy');
+                    
+                    if (!personalPolicy.checked) {
+                        alert('개인정보 수집 및 이용 약관에 동의해주세요.');
+                        return;
+                    }
+
+                    // 여기에 실제 폼 제출 로직을 추가할 수 있습니다
+                    alert('상담 신청이 접수되었습니다. 1영업일 내에 연락드리겠습니다.');
+                    
+                    // 모달 닫기
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('consultModal'));
+                    modal.hide();
+                    
+                    // 폼 초기화
+                    this.reset();
+                    document.getElementById('totalPolicy').checked = false;
+                });
+            });
+        </script>
+    </body>
+
+</html>
