@@ -35,7 +35,13 @@ public class SecurityConfig {
             "http://15.164.222.124:8080",
             "https://15.164.222.124",
             "http://ec2-15-164-222-124.ap-northeast-2.compute.amazonaws.com:8080",
-            "https://ec2-15-164-222-124.ap-northeast-2.compute.amazonaws.com"
+            "https://ec2-15-164-222-124.ap-northeast-2.compute.amazonaws.com",
+            "http://43.201.75.19:8080",
+            "https://43.201.75.19",
+            "http://ec2-43-201-75-19.ap-northeast-2.compute.amazonaws.com:8080",
+            "https://ec2-43-201-75-19.ap-northeast-2.compute.amazonaws.com",
+            "https://the1tutor.kr",
+            "http://the1tutor.kr"
         ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
