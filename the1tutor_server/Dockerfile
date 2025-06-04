@@ -19,7 +19,7 @@ COPY src src
 RUN mvn clean package -DskipTests
 
 # 런타임 스테이지
-FROM openjdk:17-jre-slim
+FROM eclipse-temurin:17-jre
 
 # 시간대 설정
 RUN apt-get update && apt-get install -y tzdata && \
