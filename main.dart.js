@@ -28289,7 +28289,7 @@ s=r+1}r=B.c.fX(a,b)
 for(;r!==-1;){q=r===0?0:B.c.AY(a,"\n",r-1)+1
 if(c===r-q)return q
 r=B.c.jV(a,b,r+1)}return null},
-hj(){return"http://15.164.222.124:8080/api"}},B={}
+hj(){return"https://the1tutor.kr/api"}},B={}
 var w=[A,J,B]
 var $={}
 A.Jl.prototype={
