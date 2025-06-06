@@ -37,7 +37,7 @@ curl http://localhost:8080/health
 
 echo ""
 echo "✅ 서버 설정 완료!"
-echo "🌐 HTTP: http://the1tutor.kr"
-echo "🔒 SSL 설정: sudo certbot --nginx -d the1tutor.kr -d www.the1tutor.kr"
+echo "🌐 HTTP: http://the1tutor.kro.kr"
+echo "🔒 SSL 설정: sudo certbot --nginx -d the1tutor.kro.kr -d www.the1tutor.kro.kr"
 echo ""
 echo "🔧 보안 그룹에서 포트 80, 443을 열어주세요!" 

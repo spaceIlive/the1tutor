@@ -11,7 +11,7 @@ class ApiConfig {
     if (kIsWeb) {
       // 임시 테스트: localhost 사용
       return 'http://localhost:8080/api';
-      // return 'https://the1tutor.kr/api';
+      // return 'https://the1tutor.kro.kr/api';
     }
     
     // 모바일 개발 환경에서만 로컬 서버 주소 사용
@@ -20,6 +20,6 @@ class ApiConfig {
     }
     
     // 프로덕션 환경에서는 AWS 서버 주소 사용
-    return 'https://the1tutor.kr/api';
+    return 'https://the1tutor.kro.kr/api';
   }
 } 
