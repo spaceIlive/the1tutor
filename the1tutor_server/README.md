@@ -38,8 +38,8 @@ mvn spring-boot:run
 ```
 
 4. 서버 접속
-- API 서버: http://localhost:8080
-- H2 콘솔: http://localhost:8080/h2-console
+- API 서버: https://the1tutor.kro.kr
+- H2 콘솔: https://the1tutor.kro.kr/h2-console
 
 ## 테스트 계정
 
@@ -193,7 +193,7 @@ GET /api/schedule/student/{studentId}
 ## 개발 환경 설정
 
 ### H2 데이터베이스 접속
-1. 브라우저에서 http://localhost:8080/h2-console 접속
+1. 브라우저에서 https://the1tutor.kro.kr/h2-console 접속
 2. 연결 정보:
    - JDBC URL: jdbc:h2:mem:testdb
    - User Name: sa

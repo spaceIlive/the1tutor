@@ -24,5 +24,5 @@ docker-compose ps
 echo "📋 애플리케이션 로그 확인..."
 docker-compose logs app --tail=20
 
-echo "✅ 배포 완료! 서비스가 http://localhost:8080 에서 실행 중입니다."
+echo "✅ 배포 완료! 서비스가 https://the1tutor.kro.kr 에서 실행 중입니다."
 echo "📊 MySQL 데이터베이스는 localhost:3306 에서 접근 가능합니다." 

@@ -29,9 +29,9 @@ docker-compose logs -f app
 ```
 
 ### 3. 접속 확인 (로컬 테스트용)
-- **🌐 웹 애플리케이션**: http://localhost:8080
-  - 브라우저에서 접속하여 API 테스트
-  - 예: http://localhost:8080/api/health (헬스체크)
+- **🌐 웹 애플리케이션**: https://the1tutor.kro.kr
+- **📡 API 엔드포인트**: `/api/*`
+- 예: https://the1tutor.kro.kr/api/health (헬스체크)
 - **🗄️ 데이터베이스** (개발자용): localhost:3306
   - 사용자: `the1tutor`
   - 비밀번호: `tutorpassword`
