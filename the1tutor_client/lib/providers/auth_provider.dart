@@ -73,6 +73,47 @@ class AuthProvider with ChangeNotifier {
     notifyListeners();
 
     try {
+      // 테스트 계정 확인 및 처리
+      if (email == 'student@test.com' || email == 'tutor@test.com') {
+        print('=== 테스트 계정 로그인 처리 ===');
+        
+        // 테스트 계정에 대한 하드코딩된 데이터 설정
+        _token = 'test_token_${DateTime.now().millisecondsSinceEpoch}';
+        
+        if (email == 'student@test.com') {
+          _userId = 9999; // 테스트 학생 ID
+          _userType = UserType.STUDENT;
+          _approvalStatus = null; // 학생은 승인 상태가 없음
+          print('테스트 학생 계정으로 로그인');
+        } else { // tutor@test.com
+          _userId = 8888; // 테스트 튜터 ID
+          _userType = UserType.TUTOR;
+          _approvalStatus = 'APPROVED'; // 테스트 튜터는 승인된 상태
+          print('테스트 튜터 계정으로 로그인');
+        }
+        
+        _isLoggedIn = true;
+        
+        print('토큰: $_token');
+        print('사용자 ID: $_userId');
+        print('사용자 타입: $_userType');
+        print('승인 상태: $_approvalStatus');
+        
+        await _saveAuthData();
+        print('인증 데이터 저장 완료');
+        
+        // AppState 초기화 콜백 호출
+        if (onLoginSuccess != null) {
+          await onLoginSuccess(_userId!, email, _userType!);
+        }
+        
+        _isLoading = false;
+        notifyListeners();
+        print('=== 테스트 계정 로그인 성공 ===');
+        return true;
+      }
+      
+      // 일반 계정의 경우 기존 API 호출 로직 수행
       print('API 호출 준비 중...');
       final loginRequest = LoginRequest(email: email, password: password);
       print('LoginRequest 생성 완료: ${loginRequest.toJson()}');
