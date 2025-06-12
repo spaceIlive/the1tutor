@@ -1,0 +1,16 @@
+[Unit]
+Description=The1Tutor Spring Boot Application
+After=syslog.target
+After=network.target
+
+[Service]
+User=ubuntu
+Type=simple
+ExecStart=/usr/bin/java -jar /home/ubuntu/the1tutor/the1tutor_server/target/the1tutor_server-0.0.1-SNAPSHOT.jar
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=the1tutor-app
+
+[Install]
+WantedBy=multi-user.target 

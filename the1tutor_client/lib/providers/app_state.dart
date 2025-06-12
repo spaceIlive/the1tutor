@@ -322,11 +322,72 @@ class AppState extends ChangeNotifier {
   void _initializeAdditionalDummyData() {
     print('=== _initializeAdditionalDummyData 호출됨 ===');
     print('사용자 타입: $_userType');
+    print('사용자 이메일: ${_userProfile?.email}');
     
-    // 더미 채팅 메시지
-    _chatMessages = [
-      ChatMessage(id: '1', sender: 'system', content: '과외방에 오신 것을 환영합니다!', timestamp: DateTime.now().subtract(Duration(hours: 1)), isSystem: true),
-    ];
+    // test 계정일 때만 더미 매칭 데이터 추가
+    if (_userProfile?.email == 'student@test.com' && _userType == 'student') {
+      print('테스트 학생 계정 - 더미 매칭 데이터 추가 (수학만)');
+      _matchedSubjects = [
+        Subject(
+          id: '1',
+          name: 'Mathematics HL',
+          tutor: '김수학 선생님',
+          nextClass: DateTime.now().add(Duration(hours: 2)),
+        ),
+      ];
+      
+      // 더미 채팅 메시지 (과외 시작 상황)
+      _chatMessages = [
+        ChatMessage(
+          id: '1', 
+          sender: 'system', 
+          content: '과외방에 오신 것을 환영합니다! 👋', 
+          timestamp: DateTime.now().subtract(Duration(hours: 24)), 
+          isSystem: true
+        ),
+        ChatMessage(
+          id: '2',
+          sender: '김수학 선생님',
+          content: '안녕하세요! 수학 과외를 담당하게 된 김수학입니다. 앞으로 잘 부탁드려요 😊',
+          timestamp: DateTime.now().subtract(Duration(hours: 23)),
+        ),
+        ChatMessage(
+          id: '3',
+          sender: '테스트 학생',
+          content: '안녕하세요 선생님! 수학이 많이 어려워서 과외를 신청했어요. 열심히 하겠습니다!',
+          timestamp: DateTime.now().subtract(Duration(hours: 22)),
+        ),
+        ChatMessage(
+          id: '4',
+          sender: '김수학 선생님',
+          content: '좋습니다! 우선 어떤 단원이 가장 어려우신지 알려주세요. 그리고 목표 점수가 있으신가요?',
+          timestamp: DateTime.now().subtract(Duration(hours: 21)),
+        ),
+        ChatMessage(
+          id: '5',
+          sender: '테스트 학생',
+          content: '미적분이 정말 어려워요... 그리고 최종 시험에서 6점 이상 받는 게 목표입니다!',
+          timestamp: DateTime.now().subtract(Duration(hours: 20)),
+        ),
+        ChatMessage(
+          id: '6',
+          sender: '김수학 선생님',
+          content: '미적분은 차근차근 개념부터 잡아가면 충분히 가능해요! 6점도 달성할 수 있습니다. 다음 수업 때 기초부터 차근차근 시작해보죠 📚',
+          timestamp: DateTime.now().subtract(Duration(hours: 19)),
+        ),
+        ChatMessage(
+          id: '7',
+          sender: '테스트 학생',
+          content: '감사합니다! 정말 기대돼요 ✨',
+          timestamp: DateTime.now().subtract(Duration(hours: 18)),
+        ),
+      ];
+    } else {
+      // 일반 더미 채팅 메시지
+      _chatMessages = [
+        ChatMessage(id: '1', sender: 'system', content: '과외방에 오신 것을 환영합니다!', timestamp: DateTime.now().subtract(Duration(hours: 1)), isSystem: true),
+      ];
+    }
     
     // 튜터 시간표 초기화 (튜터인 경우에만)
     if (_userType == 'tutor') {
