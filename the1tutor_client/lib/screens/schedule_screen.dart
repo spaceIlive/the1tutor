@@ -37,27 +37,42 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
     setState(() => _isLoading = true);
     
     try {
+      print('=== 시간표 로드 시작 ===');
       final authProvider = Provider.of<AuthProvider>(context, listen: false);
       final appState = Provider.of<AppState>(context, listen: false);
       final profile = appState.userProfile;
       
-      if (profile == null) return;
+      if (profile == null) {
+        print('프로필이 null입니다.');
+        throw Exception('사용자 프로필을 찾을 수 없습니다.');
+      }
       
       final userId = profile.userId;
+      print('사용자 ID: $userId');
+      print('사용자 타입: ${widget.isStudent ? "학생" : "튜터"}');
       
       if (widget.isStudent) {
         // 학생 시간표 로드
+        print('학생 시간표 로드 시도...');
         final response = await _apiClient.getStudentSchedule(userId);
+        print('학생 시간표 응답: $response');
+        
         setState(() {
           _scheduledClasses = Map<String, Map<String, String>>.from(
             response['scheduledClasses'] ?? {}
           );
         });
+        print('학생 시간표 로드 완료. 수업 수: ${_scheduledClasses.length}');
       } else {
         // 튜터 시간표 로드
+        print('튜터 시간표 로드 시도...');
         final response = await _apiClient.getTutorSchedule(userId);
+        print('튜터 시간표 응답: $response');
+        
         setState(() {
           final availableSlots = Set<String>.from(response['availableSlots'] ?? []);
+          print('가능한 시간대 수: ${availableSlots.length}');
+          
           _selectedSlots = {};
           for (String slot in availableSlots) {
             final parts = slot.split('-');
@@ -72,11 +87,22 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
           _bookedSlots = Map<String, Map<String, String>>.from(
             response['bookedSlots'] ?? {}
           );
+          print('예약된 시간대 수: ${_bookedSlots.length}');
         });
+        print('튜터 시간표 로드 완료');
       }
-    } catch (e) {
+    } catch (e, stackTrace) {
+      print('=== 시간표 로드 중 에러 발생 ===');
+      print('에러 타입: ${e.runtimeType}');
+      print('에러 메시지: $e');
+      print('스택 트레이스: $stackTrace');
+      
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('시간표를 불러오는데 실패했습니다: $e')),
+        SnackBar(
+          content: Text('시간표를 불러오는데 실패했습니다: ${e.toString()}'),
+          backgroundColor: Colors.red,
+          duration: Duration(seconds: 5),
+        ),
       );
     } finally {
       setState(() => _isLoading = false);
@@ -89,13 +115,18 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
     setState(() => _isLoading = true);
     
     try {
+      print('=== 시간표 저장 시작 ===');
       final authProvider = Provider.of<AuthProvider>(context, listen: false);
       final appState = Provider.of<AppState>(context, listen: false);
       final profile = appState.userProfile;
       
-      if (profile == null) return;
+      if (profile == null) {
+        print('프로필이 null입니다.');
+        throw Exception('사용자 프로필을 찾을 수 없습니다.');
+      }
       
       final userId = profile.userId;
+      print('사용자 ID: $userId');
       
       // 선택된 슬롯들을 "요일-시간" 형태로 변환
       Set<String> availableSlots = {};
@@ -104,15 +135,29 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
           availableSlots.add('$day-$time');
         }
       });
+      print('저장할 시간대 수: ${availableSlots.length}');
       
       await _apiClient.updateTutorAvailableSlots(userId, availableSlots);
+      print('시간표 저장 완료');
       
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('시간표가 성공적으로 저장되었습니다!')),
+        const SnackBar(
+          content: Text('시간표가 성공적으로 저장되었습니다!'),
+          backgroundColor: Colors.green,
+        ),
       );
-    } catch (e) {
+    } catch (e, stackTrace) {
+      print('=== 시간표 저장 중 에러 발생 ===');
+      print('에러 타입: ${e.runtimeType}');
+      print('에러 메시지: $e');
+      print('스택 트레이스: $stackTrace');
+      
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('시간표 저장에 실패했습니다: $e')),
+        SnackBar(
+          content: Text('시간표 저장에 실패했습니다: ${e.toString()}'),
+          backgroundColor: Colors.red,
+          duration: Duration(seconds: 5),
+        ),
       );
     } finally {
       setState(() => _isLoading = false);
