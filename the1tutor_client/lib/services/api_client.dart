@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/foundation.dart';
 import '../models/auth_models.dart';
 import '../config/api_config.dart';
+import '../providers/auth_provider.dart';
 
 class ApiClient {
   static String get baseUrl => ApiConfig.baseUrl;
@@ -405,18 +406,24 @@ class ApiClient {
   
   // 공통 헤더 생성 메서드
   Future<Map<String, String>> _getHeaders() async {
+    final authProvider = AuthProvider();
+    final token = await authProvider.getToken();
+    if (token == null) {
+      throw Exception('인증 토큰이 없습니다.');
+    }
     return {
       'Content-Type': 'application/json',
-      // TODO: 실제 토큰 처리 필요 시 추가
+      'Authorization': 'Bearer $token',
     };
   }
   
   // 튜터 시간표 조회
   Future<Map<String, dynamic>> getTutorSchedule(int tutorId) async {
     try {
+      final headers = await _getHeaders();
       final response = await http.get(
         Uri.parse('$baseUrl/schedule/tutor/$tutorId'),
-        headers: await _getHeaders(),
+        headers: headers,
       );
 
       if (response.statusCode == 200) {
@@ -432,9 +439,10 @@ class ApiClient {
   // 튜터 가능한 시간 업데이트
   Future<void> updateTutorAvailableSlots(int tutorId, Set<String> availableSlots) async {
     try {
+      final headers = await _getHeaders();
       final response = await http.post(
         Uri.parse('$baseUrl/schedule/tutor/$tutorId/available'),
-        headers: await _getHeaders(),
+        headers: headers,
         body: jsonEncode({
           'availableSlots': availableSlots.toList(),
         }),
@@ -452,9 +460,10 @@ class ApiClient {
   // 학생 시간표 조회
   Future<Map<String, dynamic>> getStudentSchedule(int studentId) async {
     try {
+      final headers = await _getHeaders();
       final response = await http.get(
         Uri.parse('$baseUrl/schedule/student/$studentId'),
-        headers: await _getHeaders(),
+        headers: headers,
       );
 
       if (response.statusCode == 200) {
