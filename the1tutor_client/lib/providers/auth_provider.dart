@@ -74,7 +74,7 @@ class AuthProvider with ChangeNotifier {
 
     try {
       // 테스트 계정 확인 및 처리
-      if (email == 'student@test.com' || email == 'tutor@test.com') {
+      if (email == 'student@test.com' || email == 'tutor@test.com' || email == 'tutor1@test.com') {
         print('=== 테스트 계정 로그인 처리 ===');
         
         // 테스트 계정에 대한 하드코딩된 데이터 설정
@@ -85,11 +85,11 @@ class AuthProvider with ChangeNotifier {
           _userType = UserType.STUDENT;
           _approvalStatus = null; // 학생은 승인 상태가 없음
           print('테스트 학생 계정으로 로그인');
-        } else { // tutor@test.com
-          _userId = 8888; // 테스트 튜터 ID
+        } else { // tutor@test.com 또는 tutor1@test.com
+          _userId = email == 'tutor@test.com' ? 8888 : 8889; // 테스트 튜터 ID
           _userType = UserType.TUTOR;
           _approvalStatus = 'APPROVED'; // 테스트 튜터는 승인된 상태
-          print('테스트 튜터 계정으로 로그인');
+          print('테스트 튜터 계정으로 로그인: $email');
         }
         
         _isLoggedIn = true;
@@ -127,7 +127,15 @@ class AuthProvider with ChangeNotifier {
       _userType = UserType.values.firstWhere(
         (e) => e.toString().split('.').last.toUpperCase() == response.userType,
       );
-      _approvalStatus = response.approvalStatus;
+      
+      // tutor1@test.com 계정만 자동 승인
+      if (email == 'tutor1@test.com' && _userType == UserType.TUTOR) {
+        _approvalStatus = 'APPROVED';
+        print('tutor1@test.com 계정 자동 승인 처리됨');
+      } else {
+        _approvalStatus = response.approvalStatus;
+      }
+      
       _isLoggedIn = true;
       
       print('토큰: $_token');

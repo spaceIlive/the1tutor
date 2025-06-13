@@ -19,6 +19,8 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
   Map<String, Map<String, String>> _bookedSlots = {};
   Map<String, Map<String, String>> _scheduledClasses = {};
   bool _isLoading = false;
+  Set<String> _availableSlots = {};
+  Set<String> _fixedSlots = {};
 
   final List<String> _weekdays = ['월', '화', '수', '목', '금', '토', '일'];
   final List<String> _timeSlots = [
@@ -30,6 +32,9 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
   @override
   void initState() {
     super.initState();
+    // AuthProvider 설정
+    final authProvider = Provider.of<AuthProvider>(context, listen: false);
+    ApiClient.setAuthProvider(authProvider);
     _loadSchedule();
   }
 
